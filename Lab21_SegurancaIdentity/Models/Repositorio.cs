@@ -31,6 +31,16 @@ namespace ReclamaPoaS2B.Models
             return _db.Reclamacaos.ToList();
         }
 
+        public static List<Comentario> getComentariosById(int cod)
+        {
+            ReclamePOAContext _db = new ReclamePOAContext();
+            List<Comentario> d = (from c in _db.Comentarios 
+                    where c.ReclamacaoID == cod 
+                    select c).ToList();
+
+            return d.ToList();
+        }
+
         public static void insereCategoria(Categoria nova){
             ReclamePOAContext _db = new ReclamePOAContext();
             _db.Categorias.Add(nova);
@@ -41,6 +51,13 @@ namespace ReclamaPoaS2B.Models
         {
             ReclamePOAContext _db = new ReclamePOAContext();
             _db.Reclamacaos.Add(nova);
+            _db.SaveChanges();
+        }
+
+        public static void insereComentario(Comentario novo)
+        {
+            ReclamePOAContext _db = new ReclamePOAContext();
+            _db.Comentarios.Add(novo);
             _db.SaveChanges();
         }
     }

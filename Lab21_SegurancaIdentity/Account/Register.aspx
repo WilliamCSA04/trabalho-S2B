@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="ReclamaPoaS2B.Account.Register" %>
+﻿<%@ Page Title="Registro" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="ReclamaPoaS2B.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
@@ -7,7 +7,7 @@
     </p>
 
     <div class="form-horizontal">
-        <h4>Create a new account</h4>
+        <h4>Crie uma nova conta</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
@@ -15,43 +15,34 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                    CssClass="text-danger" ErrorMessage="The email field is required." />
+                    CssClass="text-danger" ErrorMessage="O campo email está vazio." />
             </div>
         </div>
          <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="TxtNome" CssClass="col-md-2 control-label">User name</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="TxtNome" CssClass="col-md-2 control-label">Nome de Usuario</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="TxtNome" CssClass="form-control"  />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtNome"
-                    CssClass="text-danger" ErrorMessage="The name field is required." />
+                    CssClass="text-danger" ErrorMessage="O campo nome está vazio." />
             </div>
         </div>
 
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="TxtEmpresa" CssClass="col-md-2 control-label">Empresa</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="TxtEmpresa" CssClass="form-control"  />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="TxtEmpresa"
-                    CssClass="text-danger" ErrorMessage="The name field is required." />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Senha</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="The password field is required." />
+                    CssClass="text-danger" ErrorMessage="O campo senha está vazio." />
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirmar senha</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="O campo confirmar senha está vazio." />
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="As senhas não coincidem." />
             </div>
         </div>
         <div class="form-group">

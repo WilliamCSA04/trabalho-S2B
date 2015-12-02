@@ -173,6 +173,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\Categoria.css" />
     <Content Include="Content\Reclamacao.css" />
+    <Content Include="EditarReclamacao.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Image\lacador.jpg" />
     <Content Include="packages.config" />
@@ -181,6 +182,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="PaginaAdmin.aspx" />
     <Content Include="Reclamacoes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -375,6 +377,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarReclamacao.aspx.cs">
+      <DependentUpon>EditarReclamacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarReclamacao.aspx.designer.cs">
+      <DependentUpon>EditarReclamacao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -394,6 +403,13 @@
     <Compile Include="Models\Reclamacao.cs" />
     <Compile Include="Models\ReclamePOAContext.cs" />
     <Compile Include="Models\SampleData.cs" />
+    <Compile Include="PaginaAdmin.aspx.cs">
+      <DependentUpon>PaginaAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaAdmin.aspx.designer.cs">
+      <DependentUpon>PaginaAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reclamacoes.aspx.cs">
       <DependentUpon>Reclamacoes.aspx</DependentUpon>

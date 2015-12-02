@@ -103,6 +103,15 @@ namespace ReclamaPoaS2B {
         protected global::System.Web.UI.WebControls.Button ButtonComentario;
         
         /// <summary>
+        /// ButtonFechar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonFechar;
+        
+        /// <summary>
         /// PreviousPage property.
         /// </summary>
         /// <remarks>

@@ -15,7 +15,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body style="background:url('image/lacador.jpg')">
+<body>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -55,6 +55,7 @@
                          <li><a runat="server" href="~/Reclamacoes">Reclamações</a></li>
                         <li><a runat="server" href="~/About">Sobre nós</a></li>
                         <li><a runat="server" href="~/Contact">Contato</a></li>
+                        <li><a runat="server" href="~/PaginaAdmin">Administradores</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

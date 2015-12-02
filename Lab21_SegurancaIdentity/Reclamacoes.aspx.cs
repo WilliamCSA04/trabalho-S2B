@@ -16,14 +16,13 @@ namespace ReclamaPoaS2B
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack) {
-                ddlReclamacoes.DataSource = Repositorio.getReclamacoes();
-                ddlReclamacoes.DataBind();
+                ReclamePOAContext _db = new ReclamePOAContext();
 
-                ddlCategoria.DataSource = Repositorio.getCategorias();
+                ddlCategoria.DataSource = _db.Categorias.ToList();
                 ddlCategoria.DataTextField = "Nome";
                 ddlCategoria.DataValueField = "CategoriaId";
                 ddlCategoria.DataBind();
-                GridView1.DataSource = Repositorio.getReclamacoes();
+                GridView1.DataSource = _db.Reclamacaos.ToList();
                 GridView1.AutoGenerateSelectButton=true;
                 GridView1.DataBind();
             }
@@ -35,7 +34,7 @@ namespace ReclamaPoaS2B
 
                  Reclamacao nova = new Reclamacao
                  {
-                     Titulo = txtTitulo.Text,
+                     Titulo = textTitulo.Text,
                      CategoriaId = codCategoria
 
                  };
@@ -46,10 +45,27 @@ namespace ReclamaPoaS2B
 
         protected void cmdComentario_Click(object sender, EventArgs e)
         {
-            GridViewRow gvr = GridView1.SelectedRow;
-            ID = Int32.Parse(gvr.Cells[0].Text);
-            Titulo = gvr.Cells[1].Text;
-            Response.Redirect("Comentarios.aspx");
+            if (GridView1.SelectedIndex != -1)
+            {
+                GridViewRow gvr = GridView1.Rows[GridView1.SelectedIndex];
+                ID = Int32.Parse(gvr.Cells[1].Text);
+                Titulo = gvr.Cells[2].Text;
+                Server.Transfer("~/Comentarios.aspx");
+            }
+        }
+
+        protected void cmdEditar_Click(object sender, EventArgs e)
+        {
+            if (GridView1.SelectedIndex != -1)
+            {
+                //TODO: Terminar
+                Server.Transfer("~/EditarReclamacao.aspx");
+            }
+        }
+
+        protected void cmdFiltrar_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

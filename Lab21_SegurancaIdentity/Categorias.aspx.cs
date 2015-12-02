@@ -14,27 +14,14 @@ namespace ReclamaPoaS2B
         {
             if (!Page.IsPostBack)
             {
-               ddlCategorias.DataSource = Repositorio.getCategorias();
+               gvCategorias.DataSource = Repositorio.getCategorias();
                 ReclamePOAContext _db = new ReclamePOAContext();
-                ddlCategorias.DataSource = _db.Categorias.ToList();
+                gvCategorias.DataSource = _db.Categorias.ToList();
                 
-                ddlCategorias.DataBind();
+                gvCategorias.DataBind();
             }
         }
 
-        protected void cmdInserir_Click(object sender, EventArgs e)
-        {
-                Categoria nova = new Categoria
-                {
-                 
-                    Nome = txtNome.Text,
-                    Descricao = txtDescricao.Text
-                };
-           
-            ReclamePOAContext _db = new ReclamePOAContext();
-           _db.Categorias.Add(nova);
-           _db.SaveChanges();
-            Response.Redirect("Categorias.aspx");
-        }
+       
     }
 }

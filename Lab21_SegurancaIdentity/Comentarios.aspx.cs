@@ -11,29 +11,42 @@ namespace ReclamaPoaS2B
     public partial class Comentarios : System.Web.UI.Page
     {
         private static int contador=0;
+        private static string titulo;
+        private static int cod;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                ReclamePOAContext _db = new ReclamePOAContext();
-                TextBoxDescricao.Text = PreviousPage.Titulo;
-                //GridView1.DataSource = lista com todos os comentarios
-                GridView1.DataBind();
+                
+                if (PreviousPage != null)
+                {
+                    ReclamePOAContext _db = new ReclamePOAContext();
+                    TextBoxDescricao.Text = PreviousPage.Titulo;
+                    titulo = TextBoxDescricao.Text;
+                    cod = PreviousPage.ID;
+                    GridView1.DataSource = Repositorio.getComentariosById(cod);
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    TextBoxDescricao.Text = titulo;
+                    GridView1.DataSource = Repositorio.getComentariosById(cod);
+                    GridView1.DataBind();
+                }
+                
                 
             }
         }
 
         protected void ButtonComentario_Click(object sender, EventArgs e)
         {
-            int codigo = Int32.Parse(PreviousPage.ID + "" + ++contador);
-            
+            //int codigo = Int32.Parse(cod + "" + ++contador);
             Comentario c = new Comentario{
                 Descricao=txtBoxComentario.Text,
-                ReclamacaoID=codigo
+                ReclamacaoID=cod
             };
-            //Adicionar comentario na tabela
-            Response.Redirect("Comentarios.aspx");
+            Repositorio.insereComentario(c);
         }
     }
 }

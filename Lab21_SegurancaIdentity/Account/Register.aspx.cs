@@ -28,8 +28,7 @@ namespace ReclamaPoaS2B.Account
             {
                 UserName = Email.Text,
                 Email = Email.Text,
-                Nome = TxtNome.Text,
-                Empresa = TxtEmpresa.Text
+                Nome = TxtNome.Text
             };
 
             IdentityResult result = manager.Create(user, Password.Text);

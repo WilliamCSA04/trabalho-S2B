@@ -34,7 +34,7 @@ namespace ReclamaPoaS2B.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ReclamePOAConnection", throwIfV1Schema: false)
+            : base("Database1", throwIfV1Schema: false)
 
 
         {

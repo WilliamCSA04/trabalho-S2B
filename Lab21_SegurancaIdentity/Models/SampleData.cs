@@ -55,20 +55,30 @@ namespace ReclamaPoaS2B.Models
             context.SaveChanges();
 
 
-            var reclamacoes = new List<Reclamacao>()
-            {
-                new Reclamacao{Titulo="Calçada esburacada", Categoria=c2},
-                new Reclamacao{Titulo="Semáforo queimado", Categoria=c3},
-                new Reclamacao{Titulo="Faixa segurança apagada", Categoria=c3},
-                new Reclamacao{Titulo="Casa com pintura feia", Categoria=c1},
-                new Reclamacao{Titulo="Jardim mal conservado", Categoria=c1}
-            };
-
+            Reclamacao r1, r2, r3, r4, r5;
+            
+            r1= new Reclamacao{Titulo="Calçada esburacada", Categoria=c2};
+            r2=new Reclamacao{Titulo="Semáforo queimado", Categoria=c3};
+            r3=new Reclamacao{Titulo="Faixa segurança apagada", Categoria=c3};
+            r4=new Reclamacao{Titulo="Casa com pintura feia", Categoria=c1};
+            r5=new Reclamacao{Titulo="Jardim mal conservado", Categoria=c1};
+            
+            List<Reclamacao> reclamacoes=new List<Reclamacao>(){r1, r2, r3, r4, r5};
 
             reclamacoes.ForEach(s => context.Reclamacaos.Add(s));
             context.SaveChanges();
 
+            var comentarios = new List<Comentario>()
+            {
+                new Comentario{Descricao="Já cai lá uma vez", Usuario="Anonimo", Reclamacao=r1},
+                new Comentario{Descricao="O transito vira uma confusão", Usuario="Anonimo", Reclamacao=r2},
+                new Comentario{Descricao="Os carros passam como se não houvesse faixa", Usuario="Anonimo", Reclamacao=r3},
+                new Comentario{Descricao="Meu deus, que casa mais feia!", Usuario="Anonimo", Reclamacao=r4},
+                new Comentario{Descricao="As plantas estão todas mortas", Usuario="Anonimo", Reclamacao=r5},
+            };
 
+            comentarios.ForEach(s => context.Comentarios.Add(s));
+            context.SaveChanges();
 
         }
     }
