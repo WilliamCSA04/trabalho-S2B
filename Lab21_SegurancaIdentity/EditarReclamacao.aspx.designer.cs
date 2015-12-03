@@ -22,13 +22,13 @@ namespace ReclamaPoaS2B {
         protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// textTitulo control.
+        /// TextTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textTitulo;
+        protected global::System.Web.UI.WebControls.TextBox TextTitulo;
         
         /// <summary>
         /// label2 control.
@@ -40,13 +40,13 @@ namespace ReclamaPoaS2B {
         protected global::System.Web.UI.WebControls.Label label2;
         
         /// <summary>
-        /// txtDescricao control.
+        /// TextDescricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
+        protected global::System.Web.UI.WebControls.TextBox TextDescricao;
         
         /// <summary>
         /// label4 control.
@@ -85,22 +85,31 @@ namespace ReclamaPoaS2B {
         protected global::System.Web.UI.WebControls.TextBox TextEndereco;
         
         /// <summary>
-        /// Calendar1 control.
+        /// label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Label label3;
         
         /// <summary>
-        /// cmdEditar control.
+        /// TextData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdEditar;
+        protected global::System.Web.UI.WebControls.TextBox TextData;
+        
+        /// <summary>
+        /// CalendarExtender1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
         /// Label3 control.
@@ -110,6 +119,24 @@ namespace ReclamaPoaS2B {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// ddlCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
+        
+        /// <summary>
+        /// cmdEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdEditar;
         
         /// <summary>
         /// PreviousPage property.

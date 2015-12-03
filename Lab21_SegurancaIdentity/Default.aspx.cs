@@ -24,7 +24,7 @@ namespace ReclamaPoaS2B
                 var currentUser = manager.FindById(currentUserId);
 
 
-                LblMensagem.Text = currentUser.Nome + " - " + currentUser.Empresa;
+                LblMensagem.Text = currentUser.Nome;
 
             }
 

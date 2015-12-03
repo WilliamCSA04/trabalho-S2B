@@ -163,3 +163,4 @@ C:\Users\William\Documents\Visual Studio 2013\Projects\Lab21_SegurancaIdentity\o
 C:\Users\William\Documents\Visual Studio 2013\Projects\Lab21_SegurancaIdentity\obj\Debug\Projeto_ReclamePOA_db.csproj.GenerateResource.Cache
 C:\Users\William\Documents\Visual Studio 2013\Projects\Lab21_SegurancaIdentity\obj\Debug\Lab21_SegurancaIdentity.dll
 C:\Users\William\Documents\Visual Studio 2013\Projects\Lab21_SegurancaIdentity\obj\Debug\Lab21_SegurancaIdentity.pdb
+C:\Users\William\Documents\Visual Studio 2013\Projects\Lab21_SegurancaIdentity\bin\AjaxControlToolkit.dll

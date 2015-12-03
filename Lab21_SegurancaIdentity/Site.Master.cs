@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
+using System.Web.Providers.Entities;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 namespace ReclamaPoaS2B
 {
@@ -68,7 +70,13 @@ namespace ReclamaPoaS2B
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*if (!Context.User.Identity.IsAuthenticated)
+            {
+                admin.Visible = false;
+            }
+            else admin.Visible = true; //Fazer testes para usuarios administradores*/
+            
+            
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

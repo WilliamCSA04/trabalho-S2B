@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="Admin" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PaginaAdmin.aspx.cs" Inherits="ReclamaPoaS2B.PaginaAdmin" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="Content/Categoria.css" rel="stylesheet" type="text/css">
     <h2>Adicionar Categorias</h2>
@@ -34,14 +36,18 @@
     <br />
     <asp:RadioButtonList ID="RadioButtonList2" runat="server"
         RepeatDirection="Horizontal" RepeatLayout="Table">
-                <asp:ListItem Text="Categoria" Value="Categoria"></asp:ListItem>
-                <asp:ListItem Text="Bairro" Value="Bairro"></asp:ListItem>
+                <asp:ListItem Text="Categoria" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Bairro" Value="2"></asp:ListItem>
     </asp:RadioButtonList>
     <asp:Label ID="Label6" runat="server" Text="Data inicial"></asp:Label>
-    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox1"/>
+    <br />
     <asp:Label ID="Label7" runat="server" Text="Data Final"></asp:Label>    
-    <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
-    <input id="Text1" type="text" />
+    <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+    <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox2"/>
+    <br />
+    <asp:TextBox ID="TextBoxCalcular1" runat="server" CssClass="form-control"></asp:TextBox>
     <asp:Button ID="Button1" type="button" class="btn btn-primary" runat="server" Text="Calcular" OnClick="Calcular1"/>
     <br />
     <H3>Numero médio de comentarios</H3>
@@ -49,14 +55,17 @@
     <asp:Label ID="Label8" runat="server" Text="Filtar:"></asp:Label>
     <asp:RadioButtonList ID="RadioButtonList1" runat="server"
         RepeatDirection="Horizontal" RepeatLayout="Table">
-                <asp:ListItem Text="Categoria" Value="Categoria"></asp:ListItem>
-                <asp:ListItem Text="Bairro" Value="Bairro"></asp:ListItem>
-                <asp:ListItem Text="Periodo" Value="Periodo"></asp:ListItem>
+                <asp:ListItem Text="Categoria" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Bairro" Value="2"></asp:ListItem>
+                <asp:ListItem Text="Periodo" Value="3"></asp:ListItem>
     </asp:RadioButtonList>
     <asp:Label ID="Label9" runat="server" Text="Data inicial"></asp:Label>
-    <asp:Calendar ID="Calendar5" runat="server"></asp:Calendar>
+    <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+    <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="TextBox3"/>
+    <br />
     <asp:Label ID="Label10" runat="server" Text="Data Final"></asp:Label>    
-    <asp:Calendar ID="Calendar6" runat="server"></asp:Calendar>
+    <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
+    <ajaxToolkit:CalendarExtender ID="CalendarExtender4" runat="server" TargetControlID="TextBox4"/>
     <input id="Text2" type="text" />
     <asp:Button ID="Button3" type="button" class="btn btn-primary" runat="server" Text="Calcular" OnClick="Calcular2"/>
     <br />

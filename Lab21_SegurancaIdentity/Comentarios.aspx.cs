@@ -10,7 +10,6 @@ namespace ReclamaPoaS2B
 {
     public partial class Comentarios : System.Web.UI.Page
     {
-        private static int contador=0;
         private static string titulo;
         private static int cod;
 
@@ -18,20 +17,32 @@ namespace ReclamaPoaS2B
         {
             if (!Page.IsPostBack)
             {
-                
                 if (PreviousPage != null)
                 {
                     ReclamePOAContext _db = new ReclamePOAContext();
                     TextBoxDescricao.Text = PreviousPage.Titulo;
                     titulo = TextBoxDescricao.Text;
                     cod = PreviousPage.ID;
-                    GridView1.DataSource = Repositorio.getComentariosById(cod);
+                    GridView1.DataSource = Repositorio.getComentariosById(cod); //Verificar se metodo funciona
                     GridView1.DataBind();
+                    if (Context.User.Identity.IsAuthenticated)
+                    {
+                        TextBoxNome.Text = Context.User.Identity.Name;
+                        TextBoxNome.ReadOnly = true;
+                    }
+                    else TextBoxNome.ReadOnly = false;
+                    
                 }
                 else
                 {
+                    if (Context.User.Identity.IsAuthenticated)
+                    {
+                        TextBoxNome.Text = Context.User.Identity.Name;
+                        TextBoxNome.ReadOnly = true;
+                    }
+                    else TextBoxNome.ReadOnly = false;
                     TextBoxDescricao.Text = titulo;
-                    GridView1.DataSource = Repositorio.getComentariosById(cod);
+                    GridView1.DataSource = Repositorio.getComentariosById(cod); //Verificar se metodo funciona
                     GridView1.DataBind();
                 }
                 
@@ -41,12 +52,18 @@ namespace ReclamaPoaS2B
 
         protected void ButtonComentario_Click(object sender, EventArgs e)
         {
-            //int codigo = Int32.Parse(cod + "" + ++contador);
             Comentario c = new Comentario{
                 Descricao=txtBoxComentario.Text,
                 ReclamacaoID=cod
             };
             Repositorio.insereComentario(c);
+        }
+
+
+        protected void ButtonFechar_Click(object sender, EventArgs e)
+        {
+            //acessar o banco usando o cod para acessar a reclamação
+            //alterar status da reclamação
         }
     }
 }
